@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: appinio_surveyexport
+Resources:
+  SurveyExportFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Runtime: python3.8
+      Timeout: 59
+      MemorySize: 128
+      Handler: app.lambda_handler
+      Policies:
+        - AmazonS3FullAccess
+      Description: Word export
+      Events:
+        WordExport:
+          Type: Api
+          Properties:
+            Path: /word
+            #RestApiId: !Ref UtilityApi # this u may not need it
+            Method: POST

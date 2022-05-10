@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "wordexport"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1ff41qr6bpvth"
+s3_prefix = "wordexport"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
+confirm_changeset = true

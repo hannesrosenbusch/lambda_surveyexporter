@@ -1,0 +1,5 @@
+python-docx==0.8.11
+requests==2.25.1
+boto3==1.22.5
+pylint==2.13.5
+pytest==7.1.0

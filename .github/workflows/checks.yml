@@ -1,0 +1,24 @@
+name: surveyexport
+
+on: push
+
+jobs:
+  my_checks:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+
+      - name: install dependencies
+        run: |
+          make install
+      - name: run tests
+        run: |
+          make test
+      - name: run lint
+        run: |
+          make lint
