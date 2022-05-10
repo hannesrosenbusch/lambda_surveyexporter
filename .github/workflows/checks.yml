@@ -34,4 +34,5 @@ jobs:
       - name: build 
         run: sam build
 
-      #tests
+      - name: deploy on personal account
+        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name wordexport --region ${{ secrets.AWS_REGION_PERSONAL }} #--s3-bucket s3-bucket-name
