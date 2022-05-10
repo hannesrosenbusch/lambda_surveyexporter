@@ -11,7 +11,7 @@ jobs:
       - name: set up python
         uses: actions/setup-python@v1
         with:
-          python-version: "3.8"
+          python-version: "3.9"
 
       - name: install dependencies
         run: |
@@ -30,7 +30,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_PERSONAL }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PERSONAL }}
           aws-region: ${{ secrets.AWS_REGION_PERSONAL }}
-      # sam build 
-      - run: sam build
+      # sam build
+      - name: build 
+        run: sam build
 
       #tests
